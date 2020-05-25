@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+.menu {
+  position: relative;
+  margin: 40px;
+}
+
+.menu > * {
+  display: flex;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-open {
+  display: none;
+}
+
+.menu-open-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+.menu-open-button:not(:hover) {
+  transform: scale(1);
+  transition: transform 1s ease-in-out;
+}
+
+.menu-open:not(:checked) ~ .menu-open-button:hover {
+  transform: scale(1.2);
+  transition: transform 1s ease-in-out;
+}
+
+.menu-open:checked ~ .menu-open-button > .menu-line-2 {
+  height: 0;
+  margin: -1px 0;
+}
+
+.menu-open:checked ~ .menu-open-button > .menu-line-1 {
+  transform: rotate(45deg);
+}
+
+.menu-open:checked ~ .menu-open-button > .menu-line-3 {
+  transform: rotate(-45deg);
+}
+
+.menu-line {
+  width: 20px;
+  height: 2px;
+  background: white;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.menu-line-2 {
+  margin: 5px auto;
+}
+
+.menu-item {
+  margin-top: -50px;
+  transition: margin-top 100ms;
+}
+
+.menu-open:checked ~ .menu-item {
+  margin-top: 5px;
+  transition: margin-top 100ms;
+}
+
+.menu-item:hover {
+  border: 2px solid red;
+  background-color: #fff;
+  color: red;
+}
