@@ -1,0 +1,18 @@
+a {
+  color: darkred;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  display: block;
+  background: darkred;
+  transition: 300ms;
+}
+
+a:hover:after {
+  width: 100%;
+}
